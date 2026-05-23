@@ -1,1 +1,46 @@
+def run_quiz():
+    # List of dictionaries to store questions, options, and the correct answer
+    questions = [
+        {
+            "prompt": "Who developed Python programming language?",
+            "options": ["A) Guido van Rossum", "B) Bill Gates", "C) Dennis Ritchie", "D) James Gosling"],
+            "answer": "A"
+        },
+        {
+            "prompt": "Which feature is used to define a code block in Python?",
+            "options": ["A) Brackets", "B) Indentation", "C) Semicolon", "D) Full stop"],
+            "answer": "B"
+        },
+        {
+            "prompt": "Which library is commonly used for data analysis?",
+            "options": ["A) Pygame", "B) Pandas", "C) Tkinter", "D) OS"],
+            "answer": "B"
+        }
+    ]
 
+    score = 0
+
+    print("--- Welcome to the Python Quiz Game! ---")
+    print("Please type A, B, C, or D for your answer.\n")
+
+    # Loop through each question
+    for q in questions:
+        print(q["prompt"])
+        for option in q["options"]:
+            print(option)
+        
+        # Taking input from the user
+        user_input = input("Your answer: ").upper()
+        
+        # Checking the answer
+        if user_input == q["answer"]:
+            print("Correct!\n")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {q['answer']}.\n")
+
+    # Final result
+    print(f"Game Over! Your final score is: {score}/{len(questions)}")
+
+# Start the game
+run_quiz()
